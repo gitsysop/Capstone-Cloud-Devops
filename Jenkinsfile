@@ -25,7 +25,7 @@ pipeline {
             steps{
                 echo 'Deploying to AWS...'
                 withAWS(credentials: 'aws', region: 'us-west-2') {
-                    /*sh "aws eks --region us-west-2 update-kubeconfig --name capstone"*/
+                    sh "aws eks --region us-west-2 update-kubeconfig --name eksctl-capstone-cluster"
                     sh "kubectl config use-context arn:aws:cloudformation:us-west-2:570954939712:stack/eksctl-capstone-cluster"
                     sh "kubectl set image deployments/capstone-cloud-devops capstone-cloud-devops=dockersysop/capstone-cloud-devops:latest"
                     sh "kubectl apply -f deployment.yml"
