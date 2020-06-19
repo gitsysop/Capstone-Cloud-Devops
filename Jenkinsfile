@@ -14,8 +14,8 @@ pipeline {
         }
         stage('Push Docker Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')])
-                /*withDockerRegistry([url: "", credentialsId: "dockerhub"])*/ {
+                
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
                     sh "docker tag capstone-cloud-devops dockersysop/capstone-cloud-devops"
                     sh 'docker push dockersysop/capstone-cloud-devops'
                 }  
