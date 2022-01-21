@@ -1,4 +1,5 @@
 # Capstone-Cloud-Devops
+AWS EKS, Jenkins, Docker, Kubernetes
 Project Overview
 
 In this project I applied the skills and knowledge I developed throughout the Cloud DevOps Nanodegree program. These include:
